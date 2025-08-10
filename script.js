@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
         showMessage('Đang xử lý...', 'blue');
 
         try {
-            // Thay thế địa chỉ IP dưới đây bằng địa chỉ IP của máy tính bạn
-            const response = await fetch('http://192.168.11.63:5001/redeem-key', {
+            // Thay thế địa chỉ IP cục bộ bằng URL công cộng của bạn trên PythonAnywhere
+            const response = await fetch('https://admin9key.pythonanywhere.com/redeem-key', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ key: key })
@@ -51,9 +51,5 @@ document.addEventListener('DOMContentLoaded', () => {
     function showMessage(message, color) {
         messageDisplay.textContent = message;
         messageDisplay.style.color = color;
-        // Bỏ setTimeout để thông báo giữ lại
-        // setTimeout(() => {
-        //     messageDisplay.textContent = '';
-        // }, 3000); 
     }
 });
